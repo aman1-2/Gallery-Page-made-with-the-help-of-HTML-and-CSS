@@ -1,0 +1,69 @@
+*{
+    margin: 0px; /*To remove the default margin set for our body.*/
+    padding: 0px; /*To remove the default padding set for our body.*/
+    box-sizing: border-box; /*This help us to set the padding or margin within the box sizing in this the content resize itself to fit the the margina d padding */
+}
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.gallery{
+    max-width: 1200px;
+    margin: 0 auto; /*To place our box at the center by giving equal space in right and left whereas the top and bottom margin is 0*/
+    height: 100%;
+    padding: 20px;
+}
+.gallery h1{
+    text-align: center;
+    margin:20px 0;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+.collection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2px;
+}
+.image{
+    width: 20%;
+    position:relative;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.image img{
+    height: 100%;
+    width: 100%;
+    filter: grayscale(100%);
+    box-shadow: 0 0 20px #333;
+    object-fit: cover;
+}
+.image:hover{
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 10px #333);
+    transition: 0.3s;
+}
+.image:hover img{
+    filter: grayscale(0%);
+}
+.image figcaption{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    width: 100%;
+    height: 20%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.5)0%,rgba(255,255,255,0)100%);
+    transition: 0.3s;
+}
+.image:hover figcaption{
+    opacity: 1;
+    transform: scale(1.03);
+}
